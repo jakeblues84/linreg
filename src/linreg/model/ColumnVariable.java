@@ -27,11 +27,11 @@ public class ColumnVariable {
 		this.performanceMetric = performanceMetric;
 	}
 
-	public List<Double> getRows() {
+	public List<Double> getValues() {
 		return values;
 	}
 
-	public void setRows(List<Double> newValues) {
+	public void setValues(List<Double> newValues) {
 		values = newValues;
 	}
 	

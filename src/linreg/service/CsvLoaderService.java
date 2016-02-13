@@ -1,6 +1,7 @@
 package linreg.service;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,13 +9,12 @@ import java.util.List;
 
 import linreg.model.ColumnVariable;
 
-public class CsvLoader {
-	public static List<ColumnVariable> createColumnVariables(String filePath) {
+public class CsvLoaderService {
+	public static List<ColumnVariable> createColumnVariables(String filePath) throws FileNotFoundException {
 		
 		String line = null;
 
 		List<ColumnVariable> columnVariables = new ArrayList<ColumnVariable>();
-
 		
 		try {
 			FileReader fileReader = new FileReader(filePath);
@@ -75,10 +75,4 @@ public class CsvLoader {
 		
 		return columnVariables;
 	};
-	
-	public static void main(String[] args) {
-		// /home/nate/workspace/linreg/resources
-		createColumnVariables("resources/data.csv");
-		
-	}
 }
